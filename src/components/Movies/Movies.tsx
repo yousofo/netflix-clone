@@ -1,5 +1,4 @@
-import { useEffect, useState, useContext } from "react";
-//import { currentCx } from "../App.tsx";
+import { useEffect, useState } from "react";
 import MoviesSection from "./MoviesSection.tsx";
 import Swiper from 'swiper';
 import { Link } from "react-router-dom";
@@ -17,10 +16,8 @@ async function customFetch(moviesType: string, page: number) {
 }
 
 export default function Movies() {
-  //const conData = useContext(currentCx)
   const [data, setData] = useState<any>([]);
   const [swiper, setSwiper] = useState<any>(false)
-  console.count("movies rendered")
   useEffect(() => {
     if (swiper == false && data.length > 0) {
       setSwiper(
@@ -42,7 +39,7 @@ export default function Movies() {
       swiper.update()
     }
     if (data.length == 0) {
-      customFetch("movie/top_rated", 1).then(e => setData((e2: any) => e));
+      customFetch("movie/top_rated", 1).then(e => setData(e));
     }
     return () => {
       if (swiper != false) swiper.destroy();
@@ -50,7 +47,6 @@ export default function Movies() {
     }
   }, [data.length, typeof swiper])
 
-  console.log(data)
   return (
     <main className="movies overflow-hidden md:pb-3">
       <div className={`.swiper hidden md:block mb-4 swiper-home z-0 opening w-full relative select-none md:h-50vh`}>

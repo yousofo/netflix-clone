@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 const Explore = () => {
   const [data, setData] = useState([]);
-  console.log(data)
   useEffect(() => {
     fetch('https://api.themoviedb.org/3/trending/tv/week?api_key=6cd45b1ee92fc939d33d5f568aa248a6&language=en-US')
-      .then(e => e.json()).then(e => setData(e.results)).catch(e=>console.log(e))
+      .then(e => e.json()).then(e => setData(e.results))
   }, [])
 
   return (

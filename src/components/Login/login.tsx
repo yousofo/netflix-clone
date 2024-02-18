@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { redirect, useNavigate } from 'react-router-dom';
+import  { useState } from 'react'
+import {  useNavigate } from 'react-router-dom';
 import "./login.css"
 const Login = () => {
   const [mail, setMale]=useState<string>("user@mail")
@@ -7,9 +7,7 @@ const Login = () => {
   const navigate = useNavigate(); 
   function handleSubmit(e:Event){
     e.preventDefault();
-    console.log("hi")
     navigate("/Movies");
-    // return redirect('/movies');
   }
   return (
     <>

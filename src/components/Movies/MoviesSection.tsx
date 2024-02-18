@@ -1,4 +1,4 @@
-import React, { memo, useRef, useState } from 'react'
+import { memo, useRef, useState } from 'react'
 import { useEffect } from 'react';
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
@@ -22,7 +22,6 @@ const MoviesSection = memo(({ count, moviesType, secName }: { count: number, mov
   const swiperBack = useRef<any>(null);
   const swiperNext = useRef<any>(null);
   let swiper: Swiper | null = null;
-  console.count("movie section rendered" + count)
   useEffect(() => {
     swiper = new Swiper(`.swiper${count}`, {
       slidesPerView: 2,
@@ -69,7 +68,7 @@ const MoviesSection = memo(({ count, moviesType, secName }: { count: number, mov
   }, []);
   useEffect(() => {
     if (data.length === 0) {
-      customFetch(moviesType, 1).then(e => setData(e)).catch(e => console.log(e))
+      customFetch(moviesType, 1).then(e => setData(e))
     }
   }, [typeof swiper])
 

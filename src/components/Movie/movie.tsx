@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams } from 'react-router-dom';
 import "./movie.css"
 import VideoJS from '../videojs';
@@ -9,10 +9,7 @@ export default function Movie() {
   const movie = useRef<any>(null)
   const video = useRef<any>(null)
   const playerRef = useRef(null);
-  console.log("movieId: " + movieId)
-  console.log("movie: ")
-  console.log(data)
-  console.log(Object.keys(data).find(el => el == "success"))
+
 
   const videoJsOptions = {
     controls: true,
@@ -33,14 +30,14 @@ export default function Movie() {
         headers: {
           accept: "application/json",
         }
-      }).then(e => e.json()).then(e => setData(Object.keys(e).find(el => el == "success") ? false : e)).catch(e => setData(false))
+      }).then(e => e.json()).then(e => setData(Object.keys(e).find(el => el == "success") ? false : e)).catch(e => e&&setData(false))
     } else if (tvid) {
       fetch(`https://api.themoviedb.org/3/tv/${tvid}?language=en-US&api_key=6cd45b1ee92fc939d33d5f568aa248a6`, {
         method: "GET",
         headers: {
           accept: "application/json",
         }
-      }).then(e => e.json()).then(e => setData(Object.keys(e).find(el => el == "success") ? false : e)).catch(e => setData(false))
+      }).then(e => e.json()).then(e => setData(Object.keys(e).find(el => el == "success") ? false : e)).catch(e =>e&& setData(false))
     }
 
     const handleKeyDown = (event: any) => {
@@ -57,7 +54,7 @@ export default function Movie() {
   return (
     <div className=" flex-1 bg-black flex flex-col min-h-[50vh]" >
       <div className="movie relative flex-1 flex items-end overflow-hidden border-b-black border-b"
-        ref={movie} onClick={(e) => movie.current.classList.remove("active")}
+        ref={movie} onClick={() => movie.current.classList.remove("active")}
       >
         {data ? (
           <>

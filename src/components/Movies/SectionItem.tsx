@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const SectionItem = ({ data }: any) => {
-  const[loaded, setLoaded] = useState(false);
+  const[,setLoaded] = useState(false);
   const loader = useRef<any>(null);
   const movieLink = useRef<any>(null);
   function imgLoaded() {

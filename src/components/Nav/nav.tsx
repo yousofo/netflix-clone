@@ -19,8 +19,7 @@ export default function Nav(props:any) {
     if (searchQuery.length >= 2) {
       fetchDataAsync = setTimeout(() => {
         fetch(`https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=false&language=en-US&api_key=6cd45b1ee92fc939d33d5f568aa248a6&page=1`)
-          .then(e => e.json()).then(e => setData(e.results.filter((m: any) => m.release_date.length > 0).slice(0, 5))).catch(e => console.log(e));
-        console.log("fetched")
+          .then(e => e.json()).then(e => setData(e.results.filter((m: any) => m.release_date.length > 0).slice(0, 5)));
       }, 500);
     }
     return()=>{
