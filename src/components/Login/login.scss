@@ -1,0 +1,24 @@
+input {
+  background: rgba(70, 90, 126, 0.4);
+}
+button[type="submit"] {
+  background: rgba(128, 128, 128, 0.4);
+}
+.login {
+  .input-con:has(input:focus),
+  .input-con:has(input:not(:placeholder-shown)) {
+    span {
+      padding-top: 3px;
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+  }
+  footer {
+    a {
+      text-decoration: underline;
+    }
+  }
+  .lang {
+    border: 1px solid #727272;
+  }
+}

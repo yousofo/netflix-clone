@@ -1,0 +1,213 @@
+.home {
+  background-color: rgb(0, 0, 0);
+}
+.home .email input[type=email] {
+  /* border: 1px solid #00ff88; */
+  border: 1px solid rgba(128, 128, 128, 0.7);
+  background-color: rgba(22, 22, 22, 0.7);
+  outline: 2px solid transparent;
+}
+.home .email input[type=email]:focus {
+  border-color: transparent;
+  outline: 2px solid rgb(247, 58, 58);
+}
+.home .sec {
+  border-bottom: 8px solid #383838;
+}
+.home .sec-start .container {
+  z-index: 3;
+}
+.home .sec-start .container nav .lang {
+  border: 1px solid #727272;
+}
+.home .sec-start::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.2) 100%);
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+.home .sec-start::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.2) 100%);
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.home .sec-vid .container .vid img {
+  position: relative;
+  width: 100%;
+}
+.home .sec-vid .container .vid video {
+  position: absolute;
+  width: 73%;
+  top: 48%;
+  left: 50%;
+  translate: -50% -50%;
+}
+.home .sec-dl .container .img .overlay {
+  left: 50%;
+  width: 130%;
+  translate: -50%;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 13px;
+  border: 2px solid #383838;
+  overflow: hidden;
+  padding: 5px 10px;
+}
+.home .sec-dl .container .img .overlay .left {
+  display: flex;
+  align-items: center;
+}
+.home .sec-dl .container .img .overlay .left img {
+  width: 50px;
+}
+.home .sec-dl .container .img .overlay .left span {
+  margin-left: 15px;
+}
+.home .sec-dl .container .img .overlay .left span p:nth-child(2) {
+  color: rgb(0, 140, 255);
+}
+.home .sec-dl .container .img .overlay > .right {
+  width: 30px;
+  height: 23px;
+  position: relative;
+  overflow: hidden;
+}
+.home .sec-dl .container .img .overlay > .right .arrow {
+  animation: arrowDown 4s infinite;
+}
+.home .sec-dl .container .img .overlay > .right .line {
+  width: 20px;
+  height: 2px;
+  bottom: -1px;
+  translate: -50% -50%;
+  animation: lineHide 4s infinite;
+}
+.home .sec-dl .container .img .overlay > .right .circle {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  border: 3px dotted blue;
+  border-right-color: transparent;
+  border-radius: 50%;
+  transition: 0.3s;
+  scale: 0;
+  transform-origin: left top;
+  animation: circleLoad 4s infinite, spin 1s infinite linear;
+}
+.home .sec-dl .container .img .overlay > .right .check {
+  animation: check 4s infinite;
+  transform-origin: 0 0;
+}
+@keyframes downloadAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes arrowDown {
+  0% {
+    transform: translate(-50%, -100%);
+    opacity: 1;
+  }
+  29% {
+    opacity: 1;
+  }
+  30%, 100% {
+    transform: translate(-50%, 50%);
+    opacity: 0;
+  }
+}
+@keyframes lineHide {
+  0%, 13% {
+    opacity: 1;
+  }
+  20%, 100% {
+    opacity: 0;
+  }
+}
+@keyframes circleLoad {
+  0%, 20% {
+    scale: 0;
+  }
+  25%, 40% {
+    scale: 1;
+  }
+  50%, 100% {
+    scale: 0;
+  }
+}
+@keyframes check {
+  0%, 45% {
+    scale: 0;
+  }
+  55%, 100% {
+    scale: 1;
+  }
+}
+.home .sv2 video {
+  width: 61% !important;
+  top: 11% !important;
+  translate: -50% 0% !important;
+}
+.home .sdl2 .text span {
+  display: inline-block;
+  width: 15px;
+  height: 2px;
+  background-color: white;
+  translate: 0 -3px;
+}
+.home .questions .container .items button {
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 24px;
+  line-height: 1.2;
+  /* padding-right: 40px; */
+  background-color: rgb(45, 45, 45);
+  transition: 0.3s;
+}
+.home .questions .container .items button:hover {
+  background-color: #474747;
+}
+.home .questions .container .items button::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  translate: 0 -50%;
+  font-size: 40px;
+}
+.home .footer .container * {
+  color: #cecece;
+}
+.home .footer .container ul li a {
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+.home .footer .container .lang {
+  border: 1px solid #727272;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  100% {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}/*# sourceMappingURL=Home.css.map */

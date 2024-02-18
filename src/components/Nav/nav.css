@@ -1,0 +1,51 @@
+nav .left span,
+nav .left li {
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+nav .left span::after,
+nav .left li::after {
+  position: absolute;
+  content: "";
+  transition: 0.3s;
+  bottom: -2px;
+  left: -2px;
+  width: 0;
+  height: 2px;
+}
+nav .left li:hover,
+nav .left span:hover {
+  background: linear-gradient(to right, rgb(209, 52, 162), rgb(231, 35, 35));
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  position: relative;
+}
+nav .left li:hover a,
+nav .left span:hover a {
+  background: linear-gradient(to right, rgb(209, 52, 162), rgb(231, 35, 35));
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+nav .left li:hover::after,
+nav .left span:hover::after {
+  width: calc(100% + 4px);
+  background: linear-gradient(to right, rgb(209, 52, 162), rgb(231, 35, 35));
+}
+
+.mobile-search {
+  background-color: #3a3a41;
+}
+.mobile-search input:focus {
+  outline: none;
+}
+
+footer a {
+  text-decoration: underline;
+}
+footer li {
+  padding-left: 4px;
+  padding-right: 4px;
+}/*# sourceMappingURL=nav.css.map */

@@ -1,0 +1,63 @@
+$trans1: 0.3s;
+nav {
+  .left {
+    span,
+    li {
+      position: relative;
+      cursor: pointer;
+      transition: $trans1;
+      &::after {
+        position: absolute;
+        content: "";
+        transition: $trans1;
+        bottom: -2px;
+        left: -2px;
+        width: 0;
+        height: 2px;
+      }
+    }
+    li:hover,
+    span:hover {
+      background: linear-gradient(
+        to right,
+        rgb(209, 52, 162),
+        rgb(231, 35, 35)
+      );
+      background-clip: text;
+      color: transparent;
+      a {
+        background: linear-gradient(
+          to right,
+          rgb(209, 52, 162),
+          rgb(231, 35, 35)
+        );
+        background-clip: text;
+        color: transparent;
+      }
+      position: relative;
+      &::after {
+        width: calc(100% + 4px);
+        background: linear-gradient(
+          to right,
+          rgb(209, 52, 162),
+          rgb(231, 35, 35)
+        );
+      }
+    }
+  }
+}
+.mobile-search {
+  background-color: #3a3a41;
+  input:focus {
+    outline: none;
+  }
+}
+footer {
+  a {
+    text-decoration: underline;
+  }
+  li{
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
