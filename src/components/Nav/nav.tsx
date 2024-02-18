@@ -38,7 +38,7 @@ export default function Nav(props:any) {
     <div className="layout flex flex-col justify-between min-h-screen">
       <div className="relative md:absolute z-50 md:-translate-x-1/2 mt-0 md:left-1/2 py-[35px] md:py-0 md:mt-[35px] yn-con flex w-full flex-col gap-6">
         <nav className="text-sm flex relative justify-between items-center">
-          <i className="fa-solid md:hidden fa-bars text-xl"></i>
+          <Link to="/" className="md:hidden"><i className="fa-solid  fa-bars text-xl"></i></Link>
           <ul className="left hidden md:flex gap-2">
             <li><Link to="/Explore">Explore</Link></li>
             <li><Link to="/">Home</Link></li>

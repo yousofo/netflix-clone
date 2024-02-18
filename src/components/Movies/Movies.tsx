@@ -24,6 +24,7 @@ export default function Movies() {
         new Swiper(`.swiper-home`, {
           speed: 2000,
           slidesPerView: 1,
+          slidesPerGroup: 1,
           modules: [Autoplay, EffectFade],
           effect: "fade",
           loop: true,
@@ -51,6 +52,11 @@ export default function Movies() {
     <main className="movies overflow-hidden md:pb-3">
       <div className={`.swiper hidden md:block mb-4 swiper-home z-0 opening w-full relative select-none md:h-50vh`}>
         <div className="swiper-wrapper">
+          <div className="swiper-slide"></div>
+          <div className="swiper-slide"></div>
+          <div className="swiper-slide"></div>
+          <div className="swiper-slide"></div>
+          <div className="swiper-slide"></div>
           {data.map((element: any, elei: number) => (
             <div className="swiper-slide" key={uuid()}>
               <Link className="item h-full rounded-lg relative yn-con flex items-center" to={`./${element.id}`} key={elei}>

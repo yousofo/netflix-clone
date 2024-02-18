@@ -58,7 +58,7 @@ export default function Movie() {
       >
         {data ? (
           <>
-            <img className="relative md:absolute z-0 w-full my-auto h-full select-none object-cover" src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} alt="" />
+            <img className="relative md:absolute z-0 w-full mb-auto sm:my-auto h-full select-none object-cover" src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} alt="" />
             <div className="absolute text md:relative w-full bottom-0">
               <div className=" relative z-10 yn-con mb-9 text-xs sm:text-sm text-slate-200 flex flex-col gap-2">
                 <h2 className="text-2xl sm:text-3xl">{data.title || data.original_name}</h2>

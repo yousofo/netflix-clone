@@ -18,6 +18,7 @@ async function customFetch(moviesType: string, page: number) {
 
 const MoviesSection = memo(({ count, moviesType, secName }: { count: number, moviesType: string, secName: string }) => {
   const [data, setData] = useState([]);
+  const [length, setLength] = useState(0)
   const wrapper = useRef<any>([]);
   const swiperBack = useRef<any>(null);
   const swiperNext = useRef<any>(null);
@@ -67,10 +68,17 @@ const MoviesSection = memo(({ count, moviesType, secName }: { count: number, mov
     };
   }, []);
   useEffect(() => {
+    console.log(data.length)
     if (data.length === 0) {
-      customFetch(moviesType, 1).then(e => setData(e))
+      customFetch(moviesType, 1).then(e => { setData(e); setLength(20) })
     }
-  }, [typeof swiper])
+    if (data.length > 0) {
+      document.querySelectorAll(".toberemoved").forEach(e => e.remove())
+    }
+    if (swiper) {
+      swiper!.update()
+    }
+  }, [length])
 
   return (
     <div className={`holder-con w-full overflow-hidden m-auto relative z-1 py-1.5 md:py-2 `}>{/*${(data.length > 0 && swiper != false) && "yn-show"}*/}
@@ -82,6 +90,36 @@ const MoviesSection = memo(({ count, moviesType, secName }: { count: number, mov
 
       <div className={`.swiper swiper${count} holder yn-con overflow-hidden relative select-none`} >
         <div ref={wrapper} className="swiper-wrapper flex min-h-20">
+          <div className={`swiper-slide toberemoved item relative w-1/6 movie-img inline-block px-0.5`}>
+            <div className="circle-loader transition-all z-20 rounded-full aspect-square absolute w-1/2 centered"></div>
+            <a className={`relative block opacity-0 z-10 aspect-tall`}>
+              <img loading="lazy" src="" className="w-full h-full object-cover" alt="" />
+            </a>
+          </div>
+          <div className={`swiper-slide toberemoved item relative w-1/6 movie-img inline-block px-0.5`}>
+            <div className="circle-loader transition-all z-20 rounded-full aspect-square absolute w-1/2 centered"></div>
+            <a className={`relative block opacity-0 z-10 aspect-tall`}>
+              <img loading="lazy" src="" className="w-full h-full object-cover" alt="" />
+            </a>
+          </div>
+          <div className={`swiper-slide toberemoved item relative w-1/6 movie-img inline-block px-0.5`}>
+            <div className="circle-loader transition-all z-20 rounded-full aspect-square absolute w-1/2 centered"></div>
+            <a className={`relative block opacity-0 z-10 aspect-tall`}>
+              <img loading="lazy" src="" className="w-full h-full object-cover" alt="" />
+            </a>
+          </div>
+          <div className={`swiper-slide toberemoved item relative w-1/6 movie-img inline-block px-0.5`}>
+            <div className="circle-loader transition-all z-20 rounded-full aspect-square absolute w-1/2 centered"></div>
+            <a className={`relative block opacity-0 z-10 aspect-tall`}>
+              <img loading="lazy" src="" className="w-full h-full object-cover" alt="" />
+            </a>
+          </div>
+          <div className={`swiper-slide toberemoved item relative w-1/6 movie-img inline-block px-0.5`}>
+            <div className="circle-loader transition-all z-20 rounded-full aspect-square absolute w-1/2 centered"></div>
+            <a className={`relative block opacity-0 z-10 aspect-tall`}>
+              <img loading="lazy" src="" className="w-full h-full object-cover" alt="" />
+            </a>
+          </div>
           {data.map((element: any) => (
             <SectionItem data={element} key={uuid()} />
           ))}
