@@ -2,7 +2,7 @@ import { memo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const SectionItem = memo(
-  ({ data, handleImgCount,ItemInd }: any) => {
+  ({ data, handleImgCount }: any) => {
     const [, setLoaded] = useState(false);
     const loader = useRef<any>(null);
     const movieLink = useRef<any>(null);
@@ -16,7 +16,7 @@ const SectionItem = memo(
       <div className={`swiper-slide  item relative w-1/6 movie-img inline-block px-0.5`}>
         <div ref={loader} className="circle-loader transition-all z-20 rounded-full aspect-square absolute w-1/2 centered"></div>
         <Link ref={movieLink} className={`relative block opacity-0 z-10 min-w-28 aspect-tall`} to={`./${data.id}`}>
-          <img onLoad={() => { handleImgCount(ItemInd); imgLoaded() }} loading="lazy" src={`https://image.tmdb.org/t/p/original${data.poster_path}`} className="w-full h-full object-cover" alt="" />
+          <img onLoad={() => { handleImgCount(); imgLoaded() }} loading="lazy" src={`https://image.tmdb.org/t/p/original${data.poster_path}`} className="w-full h-full object-cover" alt="" />
           {data.vote_average >= 7.5 &&
             <div className="tier absolute right-0.5 top-0 overflow-hidden">
               <div className="relative p-0.5 text-xs">

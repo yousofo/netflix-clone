@@ -18,6 +18,7 @@ async function customFetch(moviesType: string, page: number) {
 
 const MoviesSection = memo(({ count, moviesType, secName }: { count: number, moviesType: string, secName: string }) => {
   let imgCount = useRef<number>(0)
+  let justOnce = useRef<boolean>(false)
   const [data, setData] = useState([]);
   const [, setRerender] = useState(false);
   const [length, setLength] = useState(0)
@@ -81,11 +82,12 @@ const MoviesSection = memo(({ count, moviesType, secName }: { count: number, mov
       customFetch(moviesType, 1).then(e => { setData(e); setLength(20) })
     }
   }, [length])
-  function handleImgCount(e:number) {
-    if(e==7){
-      imgCount.current = 7
-      setRerender(true)
-    }
+  function handleImgCount() {
+      imgCount.current++
+      if(imgCount.current >5 && !justOnce.current){
+        justOnce.current = true
+        setRerender(true)
+      }
   }
   return (
     <div className={`holder-con w-full overflow-hidden m-auto relative z-1 py-1.5 md:py-2 `}>{/*${(data.length > 0 && swiper != false) && "yn-show"}*/}
@@ -97,8 +99,8 @@ const MoviesSection = memo(({ count, moviesType, secName }: { count: number, mov
 
       <div className={`.swiper swiper${count} holder yn-con overflow-hidden relative select-none`} >
         <div ref={wrapper} className="swiper-wrapper flex min-h-20">
-          {data.map((element: any,i:number) => (
-            <SectionItem handleImgCount={handleImgCount} data={element} ItemInd={i} key={uuid()} />
+          {data.map((element: any) => (
+            <SectionItem handleImgCount={handleImgCount} data={element} key={uuid()} />
           ))}
         </div>
         <div ref={swiperBack} className={`swiper-button-prev opacity-100 text-white left-0 h-full  bg-dark-80 top-0 mt-0 swiper-button-prev${count}`}></div>
