@@ -21,8 +21,8 @@ export default function Home() {
           </nav>
           <div className="membership px-3 pt-24 sm:pb-40 sm:pt-60 w-full flex flex-col items-center text-center">
             <h1 className="text-3xl font-semibold lg:font-extrabold lg:text-5xl">Unlimited movies, TV shows, and more.</h1>
-            <p className="text-lg my-4 lg:text-2xl">Watch anywhere. Cancel anytime.</p>
-            <p className="text-lg lg:text-xl">Ready to watch? Enter your email to create or restart your membership.</p>
+            <p className="text-base xs:text-lg my-4 lg:text-2xl">Watch anywhere. Cancel anytime.</p>
+            <p className="text-base xs:text-lg lg:text-xl">Ready to watch? Enter your email to create or restart your membership.</p>
 
             <div className="email mt-3 w-full gap-4 sm:gap-0 flex flex-col sm:flex-row items-center justify-center">
               <input type="email" className="flex-1 sm:me-2 rounded-sm text-white p-3 max-w-64 w-full" placeholder="Email address" />
@@ -43,7 +43,6 @@ export default function Home() {
           </div>
           <div className="vid relative">
             <img src="./tv.png" alt="" />
-            {/* type="video/m4v" */}
             <video src="./video-tv-0819.mp4" muted loop autoPlay></video>
           </div>
         </div>
@@ -51,7 +50,7 @@ export default function Home() {
       <div className="sec flex justify-center overflow-hidden sec-dl px-6 py-14">
         <div className="container max-w-[1000px] m-auto flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-4 sm:gap-10">
           <div className="img relative order-1 pb-16 sm:ms-8">
-            <img src="./mobile-0819.jpg" className="max-w-56" alt=""/>
+            <img src="./mobile-0819.jpg" className="max-w-56" alt="" />
             <div className="overlay absolute bottom-0">
               <div className="left">
                 <img src="/boxshot.png" alt="" />
@@ -124,31 +123,33 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <footer className="footer py-7 container m-auto">
-        <p className="pb-4 underline">Question? Contact us.</p>
-        <ul className="items flex flex-wrap">
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">FAQ</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Help Center</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Account</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Media Center</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Investor Relations</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Jobs</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Ways to Watch</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Terms of Use</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Privacy</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Cookie Preferences</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Corporate Information</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Contact Us</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Speed Test</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Legal Notices</a></li>
-          <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Only on Netflix</a></li>
-        </ul>
-        <button className="lang flex my-5 py-1 px-3 items-center h-full rounded">
-          <i className="fa-solid fa-globe"></i>
-          <span className="text-sm px-1">En</span>
-          <i className="fa-solid fa-caret-down"></i>
-        </button>
-        <p className="text-sm">Netflix Egypt</p>
+      <footer className="px-6 py-7 m-auto">
+        <div className="footer container m-auto">
+          <p className="pb-4 underline">Question? Contact us.</p>
+          <ul className="items flex flex-wrap">
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">FAQ</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Help Center</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Account</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Media Center</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Investor Relations</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Jobs</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Ways to Watch</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Terms of Use</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Privacy</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Cookie Preferences</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Corporate Information</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Contact Us</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Speed Test</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Legal Notices</a></li>
+            <li className="w-1/2 sm:w-1/3 py-2 leading-4"><a href="#">Only on Netflix</a></li>
+          </ul>
+          <button className="lang flex my-5 py-1 px-3 items-center h-full rounded">
+            <i className="fa-solid fa-globe"></i>
+            <span className="text-sm px-1">En</span>
+            <i className="fa-solid fa-caret-down"></i>
+          </button>
+          <p className="text-sm">Netflix Egypt</p>
+        </div>
       </footer>
     </div>
   )
