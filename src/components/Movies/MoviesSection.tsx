@@ -30,7 +30,7 @@ const MoviesSection = memo(({ count, moviesType, secName }: { count: number, mov
   console.count("MoviesSection ")
   useEffect(() => {
     console.log(imgCount)
-    if (imgCount.current == 7 && swiper == null) {
+    if (imgCount.current >= 5 && swiper == null) {
       console.log("swiper init" + count)
       swiper = new Swiper(`.swiper${count}`, {
         slidesPerView: 2,
@@ -84,7 +84,7 @@ const MoviesSection = memo(({ count, moviesType, secName }: { count: number, mov
   }, [length])
   function handleImgCount() {
       imgCount.current++
-      if(imgCount.current >5 && !justOnce.current){
+      if(imgCount.current >=5 && !justOnce.current){
         justOnce.current = true
         setRerender(true)
       }
