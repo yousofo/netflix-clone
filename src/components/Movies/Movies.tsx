@@ -18,7 +18,7 @@ async function customFetch(moviesType: string, page: number) {
 export default function Movies() {
   const [data, setData] = useState<any>([]);
   let swiper: Swiper | null = null;
-  const [rerender, setRerender] = useState(false);
+  const [, setRerender] = useState(false);
   let imgCount = useRef<number>(0)
 
   useEffect(() => {

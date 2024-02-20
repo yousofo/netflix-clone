@@ -19,7 +19,7 @@ async function customFetch(moviesType: string, page: number) {
 const MoviesSection = memo(({ count, moviesType, secName }: { count: number, moviesType: string, secName: string }) => {
   let imgCount = useRef<number>(0)
   const [data, setData] = useState([]);
-  const [rerender, setRerender] = useState(false);
+  const [, setRerender] = useState(false);
   const [length, setLength] = useState(0)
   const wrapper = useRef<any>([]);
   const swiperBack = useRef<any>(null);
